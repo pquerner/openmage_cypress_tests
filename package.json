@@ -1,0 +1,72 @@
+{
+  "name": "openmage_cypress_tests",
+  "version": "0.0.1",
+  "description": "Cypress tests run on a OpenMage instance",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --ext .ts --fix",
+    "cy:ui:test": "node scripts/run.js --run",
+    "cy:ui:dev": "node scripts/run.js --open"
+  },
+  "keywords": [
+    "cypress",
+    "openmage",
+    "magento",
+    "test",
+    "jest"
+  ],
+  "author": "Pascal Querner",
+  "license": "MIT",
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 150
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "command-line-args": "^5.2.1",
+    "currency.js": "^2.0.4",
+    "cypress-dotenv": "^2.0.0",
+    "cypress-multi-reporters": "^1.6.3",
+    "cypress-real-events": "^1.10.3",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-unicorn": "^48.0.1",
+    "http-status-codes": "^2.2.0",
+    "lint-staged": "^14.0.1",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0",
+    "npm": "^10.1.0",
+    "prettier": "^3.0.3",
+    "pretty-quick": "^3.1.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "lint-staged": {
+    "*": [
+      "pretty-quick --staged"
+    ],
+    "*.ts": [
+      "npm run lint"
+    ]
+  },
+  "devDependencies": {
+    "@cypress/skip-test": "^2.6.1",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "cypress": "13.2.0",
+    "cypress-if": "^1.10.5",
+    "cypress-wait-until": "^2.0.1",
+    "prettier": "^3.0.3",
+    "pretty-quick": "^3.1.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
