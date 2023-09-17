@@ -5,6 +5,7 @@ cypress/snapshots/**/__diff_output__
 .vscode/
 *.env*
 !.env.customernamesample
+!cypress.env.json
 .config/
 .npm/
 .bash_history
