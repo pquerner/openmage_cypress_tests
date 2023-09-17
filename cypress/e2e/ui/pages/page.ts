@@ -60,6 +60,12 @@ export default class Page extends AbstractPageClass {
     this.beforeLoadPage();
     this.afterLoadPage();
   }
+
+  public findInNavAndGoto(target: string) {
+    cy.get('#nav').should('exist')
+      .contains(target)
+      .click({ force: true });
+  }
 }
 
 export const page: Page = new Page();
