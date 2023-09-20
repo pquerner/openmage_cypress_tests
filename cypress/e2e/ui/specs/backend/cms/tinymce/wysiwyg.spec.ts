@@ -9,6 +9,7 @@ describe(`WYSIWYG Tests`, { scrollBehavior: 'center' }, () => {
       backendLoginPage.properties.get(backendLoginPage).store = '';
       backendLoginPage.visitPage();
       backendLoginPage.loginSuccess();
+      // TODO clear cache, just in case
     });
   });
 

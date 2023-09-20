@@ -9,13 +9,12 @@ class BackendCmsContentPage extends Page {
   }
 
   public enterTextWoWYSIWYGEditor(text: string) {
-    cy.get('#page_content_ifr')
+    cy.get('iframe#page_content_ifr')
       .should('exist')
       .then(($iframe) => {
         const $body = $iframe.contents().find('body');
         cy.wrap($body)
           .should('exist')
-          .should('have.class', 'mceContentBody')
           .should('have.id', 'tinymce')
           .type(text);
         cy.wrap($body)
@@ -24,20 +23,28 @@ class BackendCmsContentPage extends Page {
   }
 
   public markTextBold() {
-    cy.get('#page_content_ifr')
+    cy.get('iframe#page_content_ifr')
       .should('exist')
       .then(($iframe) => {
         const $body = $iframe.contents().find('body');
         cy.wrap($body)
           .should('exist')
-          .should('have.class', 'mceContentBody')
           .should('have.id', 'tinymce')
           .type('{selectAll}');
       });
-    cy.get('#page_content_bold')
+
+    //old tinymce
+    // cy.get('#page_content_bold')
+    //   .should('exist')
+    //   .click();
+
+    //tinymce6
+    cy.get('button[aria-label="Bold"]')
       .should('exist')
+      .should('be.visible')
       .click();
-    cy.get('#page_content_ifr')
+
+    cy.get('iframe#page_content_ifr')
       .should('exist')
       .then(($iframe) => {
         const $body = $iframe.contents().find('body');
@@ -52,8 +59,15 @@ class BackendCmsContentPage extends Page {
       pathname: '**/admin/widget/index/**/widget_target_id/page_content/**'
     }).as('adminhtml_widget_opens');
 
-    cy.get('#page_content_magentowidget')
+    //old tinymce
+    // cy.get('#page_content_magentowidget')
+    //   .should('exist')
+    //   .click();
+
+    //tinymce 6
+    cy.get('button[aria-label="OpenMage Widget"]')
       .should('exist')
+      .should('be.visible')
       .click();
 
     cy.wait('@adminhtml_widget_opens');

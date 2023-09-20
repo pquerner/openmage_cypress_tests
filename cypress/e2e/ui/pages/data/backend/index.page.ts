@@ -17,8 +17,19 @@ class BackendIndexPage extends Page {
     cy.get('#page_tabs_content_section')
       .should('exist')
       .click();
-    cy.get('#page_content_parent')
-      .should('have.class', 'mceEditor');
+
+    //todo can both be testable without duplicate / commented code?
+
+    // tinymce6
+    cy.get('div.tox.tox-tinymce')
+      .siblings()
+      .get('.tox-editor-container')
+      .should('exist')
+      .should('be.visible');
+
+    // old tinymce
+    //cy.get('#page_content_parent')
+      //.should('have.class', 'mceEditor');
   }
 }
 

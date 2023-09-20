@@ -12,7 +12,7 @@ export default class Page extends AbstractPageClass {
     this.properties.set(this, {
       path: '/',
       hashCode: '',
-      store: Cypress.env('store') || 'testshop'
+      store: Cypress.env('store') || ''
     });
   }
 

@@ -5,7 +5,9 @@ It can be used as a starting point to a specific shop running OpenMage aswell.
 
 ## How to use
 
-Install via `npm i`.
+1. Install via `npm i`.
+2. Fix `admin` userdata in `fixtures/backend-admin-user.json`.
+3. Fix `baseUrl` in `backend.env.json`.
 
 Use scripts from `package.json`:
 
