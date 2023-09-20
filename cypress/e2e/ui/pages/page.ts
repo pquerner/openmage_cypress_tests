@@ -37,7 +37,7 @@ export default class Page extends AbstractPageClass {
   }
 
   public beforeLoadPage() {
-    //noop
+    cy.visit(this.getPage());
   }
 
   public afterLoadPage() {
